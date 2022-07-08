@@ -253,7 +253,8 @@ if X11:
             
         print('=' * 10)
         print('***** evaluate *****')
-        model.load_weights(file_conv)
+        # model.load_weights(file_conv)
+        model.load_weights(file_conv, by_name=True)
         # file_conv_abs = '/home/ciel/DeepSTN/BikeNYC/'+file_conv
         # model.load_weights(file_conv_abs)
         
@@ -364,7 +365,8 @@ if X10:
             
         print('=' * 10)
         print('***** evaluate *****')
-        model.load_weights(file_conv)
+        # model.load_weights(file_conv)
+        model.load_weights(file_conv, by_name=True)
         # file_conv_abs = '/home/ciel/DeepSTN/BikeNYC/'+file_conv
         # model.load_weights(file_conv_abs)
         
@@ -475,7 +477,8 @@ if X01:
             
         print('=' * 10)
         print('***** evaluate *****')
-        model.load_weights(file_conv)
+        # model.load_weights(file_conv)
+        model.load_weights(file_conv, by_name=True)
         # file_conv_abs = '/home/ciel/DeepSTN/BikeNYC/'+file_conv
         # model.load_weights(file_conv_abs)
         
@@ -586,7 +589,8 @@ if X00:
             
         print('=' * 10)
         print('***** evaluate *****')
-        model.load_weights(file_conv)
+        # model.load_weights(file_conv)
+        model.load_weights(file_conv, by_name=True)
         # file_conv_abs = '/home/ciel/DeepSTN/BikeNYC/'+file_conv
         # model.load_weights(file_conv_abs)
         
