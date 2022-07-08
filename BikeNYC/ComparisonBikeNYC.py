@@ -253,6 +253,7 @@ if X11:
         print('=' * 10)
         print('***** evaluate *****')
         # model.load_weights(file_conv)
+        print('loading '+'./'+file_conv)
         model.load_weights('./'+file_conv)
         
         score = model.evaluate([X_train,P_train,T_train], Y_train, batch_size=Y_train.shape[0] // 48, verbose=0)
@@ -363,6 +364,7 @@ if X10:
         print('=' * 10)
         print('***** evaluate *****')
         # model.load_weights(file_conv)
+        print('loading '+'./'+file_conv)
         model.load_weights('./'+file_conv)
         
         score = model.evaluate(X_train, Y_train, batch_size=Y_train.shape[0] // 48, verbose=0)
@@ -473,6 +475,7 @@ if X01:
         print('=' * 10)
         print('***** evaluate *****')
         # model.load_weights(file_conv)
+        print('loading '+'./'+file_conv)
         model.load_weights('./'+file_conv)
         
         score = model.evaluate([X_train,P_train,T_train], Y_train, batch_size=Y_train.shape[0] // 48, verbose=0)
@@ -583,6 +586,7 @@ if X00:
         print('=' * 10)
         print('***** evaluate *****')
         # model.load_weights(file_conv)
+        print('loading '+'./'+file_conv)
         model.load_weights('./'+file_conv)
         
         score = model.evaluate(X_train, Y_train, batch_size=Y_train.shape[0] // 48, verbose=0)
