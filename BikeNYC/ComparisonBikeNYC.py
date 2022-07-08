@@ -16,7 +16,8 @@ np.random.seed(seed)
 #set_trace()
 
 #for GPU in Lab
-device=6
+# device=6
+device=1
 
 import os
 os.environ["CUDA_VISIBLE_DEVICES"]=str(device)
