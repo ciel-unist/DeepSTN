@@ -1,4 +1,5 @@
 #from __future__ import print_function
+from site import abs_paths
 from DATA.lzq_read_data_time_poi import lzq_load_data
 from keras.callbacks import ModelCheckpoint
 #import cPickle as pickle
@@ -253,8 +254,8 @@ if X11:
         print('=' * 10)
         print('***** evaluate *****')
         # model.load_weights(file_conv)
-        print('loading '+'./'+file_conv)
-        model.load_weights('./'+file_conv)
+        file_conv_abs = '/home/ciel/DeepSTN/BikeNYC/'+file_conv
+        model.load_weights(file_conv_abs)
         
         score = model.evaluate([X_train,P_train,T_train], Y_train, batch_size=Y_train.shape[0] // 48, verbose=0)
         print('              mse     rmse    mae')
@@ -364,8 +365,8 @@ if X10:
         print('=' * 10)
         print('***** evaluate *****')
         # model.load_weights(file_conv)
-        print('loading '+'./'+file_conv)
-        model.load_weights('./'+file_conv)
+        file_conv_abs = '/home/ciel/DeepSTN/BikeNYC/'+file_conv
+        model.load_weights(file_conv_abs)
         
         score = model.evaluate(X_train, Y_train, batch_size=Y_train.shape[0] // 48, verbose=0)
         print('              mse     rmse    mae')
@@ -475,8 +476,8 @@ if X01:
         print('=' * 10)
         print('***** evaluate *****')
         # model.load_weights(file_conv)
-        print('loading '+'./'+file_conv)
-        model.load_weights('./'+file_conv)
+        file_conv_abs = '/home/ciel/DeepSTN/BikeNYC/'+file_conv
+        model.load_weights(file_conv_abs)
         
         score = model.evaluate([X_train,P_train,T_train], Y_train, batch_size=Y_train.shape[0] // 48, verbose=0)
         print('              mse     rmse    mae')
@@ -586,8 +587,8 @@ if X00:
         print('=' * 10)
         print('***** evaluate *****')
         # model.load_weights(file_conv)
-        print('loading '+'./'+file_conv)
-        model.load_weights('./'+file_conv)
+        file_conv_abs = '/home/ciel/DeepSTN/BikeNYC/'+file_conv
+        model.load_weights(file_conv_abs)
         
         score = model.evaluate(X_train, Y_train, batch_size=Y_train.shape[0] // 48, verbose=0)
         print('              mse     rmse    mae')
