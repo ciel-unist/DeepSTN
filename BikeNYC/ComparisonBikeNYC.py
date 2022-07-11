@@ -120,7 +120,7 @@ if XDST:
             
         time_start=time.time()
             
-        F='DST_MODEL/dst_model_'+str(iterate)+'_.hdf5'
+        F='DST_MODEL/dst_model_'+str(iterate)+'_.ckpt'
             
         model = build_model(external_dim=False,CFN=CF)
         if trainDST:
@@ -229,7 +229,7 @@ if X11:
                       is_pt=is_pt,P_N=P_N,T_F=T_F,PT_F=PT_F,T=T,     
                       drop=drop)            
         
-        file_conv='DeepSTN_11/MODEL/DeepSTN_11_model_'+str(iterate)+'.hdf5'
+        file_conv='DeepSTN_11/MODEL/DeepSTN_11_model_'+str(iterate)+'.ckpt'
         #train conv_model
         if train11:
             model_checkpoint=ModelCheckpoint(
@@ -253,10 +253,7 @@ if X11:
             
         print('=' * 10)
         print('***** evaluate *****')
-        # model.load_weights(file_conv)
-        model.load_weights(file_conv, by_name=True)
-        # file_conv_abs = '/home/ciel/DeepSTN/BikeNYC/'+file_conv
-        # model.load_weights(file_conv_abs)
+        model.load_weights(file_conv)
         
         score = model.evaluate([X_train,P_train,T_train], Y_train, batch_size=Y_train.shape[0] // 48, verbose=0)
         print('              mse     rmse    mae')
@@ -341,7 +338,7 @@ if X10:
                       is_pt=is_pt,P_N=P_N,T_F=T_F,PT_F=PT_F,T=T,     
                       drop=drop)            
         
-        file_conv='DeepSTN_10/MODEL/DeepSTN_10_model_'+str(iterate)+'.hdf5'
+        file_conv='DeepSTN_10/MODEL/DeepSTN_10_model_'+str(iterate)+'.ckpt'
         #train conv_model
         if train10:
             model_checkpoint=ModelCheckpoint(
@@ -365,10 +362,7 @@ if X10:
             
         print('=' * 10)
         print('***** evaluate *****')
-        # model.load_weights(file_conv)
-        model.load_weights(file_conv, by_name=True)
-        # file_conv_abs = '/home/ciel/DeepSTN/BikeNYC/'+file_conv
-        # model.load_weights(file_conv_abs)
+        model.load_weights(file_conv)
         
         score = model.evaluate(X_train, Y_train, batch_size=Y_train.shape[0] // 48, verbose=0)
         print('              mse     rmse    mae')
@@ -453,7 +447,7 @@ if X01:
                       is_pt=is_pt,P_N=P_N,T_F=T_F,PT_F=PT_F,T=T,     
                       drop=drop)            
         
-        file_conv='DeepSTN_01/MODEL/DeepSTN_01_model_'+str(iterate)+'.hdf5'
+        file_conv='DeepSTN_01/MODEL/DeepSTN_01_model_'+str(iterate)+'.ckpt'
         #train conv_model
         if train01:
             model_checkpoint=ModelCheckpoint(
@@ -477,10 +471,7 @@ if X01:
             
         print('=' * 10)
         print('***** evaluate *****')
-        # model.load_weights(file_conv)
-        model.load_weights(file_conv, by_name=True)
-        # file_conv_abs = '/home/ciel/DeepSTN/BikeNYC/'+file_conv
-        # model.load_weights(file_conv_abs)
+        model.load_weights(file_conv)
         
         score = model.evaluate([X_train,P_train,T_train], Y_train, batch_size=Y_train.shape[0] // 48, verbose=0)
         print('              mse     rmse    mae')
@@ -565,7 +556,7 @@ if X00:
                       is_pt=is_pt,P_N=P_N,T_F=T_F,PT_F=PT_F,T=T,     
                       drop=drop)            
         
-        file_conv='DeepSTN_00/MODEL/DeepSTN_00_model_'+str(iterate)+'.hdf5'
+        file_conv='DeepSTN_00/MODEL/DeepSTN_00_model_'+str(iterate)+'.ckpt'
         #train conv_model
         if train00:
             model_checkpoint=ModelCheckpoint(
@@ -589,10 +580,7 @@ if X00:
             
         print('=' * 10)
         print('***** evaluate *****')
-        # model.load_weights(file_conv)
-        model.load_weights(file_conv, by_name=True)
-        # file_conv_abs = '/home/ciel/DeepSTN/BikeNYC/'+file_conv
-        # model.load_weights(file_conv_abs)
+        model.load_weights(file_conv)
         
         score = model.evaluate(X_train, Y_train, batch_size=Y_train.shape[0] // 48, verbose=0)
         print('              mse     rmse    mae')
